@@ -1,78 +1,177 @@
-/* styles.css */
+/* styling.css */
 
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    z-index: 1000;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
+  font-family: 'Roboto', sans-serif; /* Use the imported font */
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222; /* Darker background for better contrast */
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px; /* Adjusted padding for a thicker navbar */
+  background-color: #222; /* Consistent with the header */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Ensure items are centered vertically */
+}
+
+nav ul li {
+  position: relative; /* For positioning the separator */
+  margin: 0; /* Remove default margin */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Default text color */
+  font-weight: 700; /* Bolder font weight for better readability */
+  padding: 10px 20px; /* Increased padding for larger clickable area */
+  transition: color 0.3s; /* Smooth transition for text color */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Adjust font size for better balance */
+  display: inline-block; /* Ensure the links are displayed inline */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ddd; /* Highlight text color on hover */
+}
+
+/* Section Styling */
+section {
+  padding: 80px 20px; /* Increased padding to accommodate the thicker navbar */
+  margin: 0; /* Ensure no extra margin is applied */
+}
+
+section:nth-of-type(odd) {
+  background-color: #dcdcdc; /* Light gray background for odd sections */
+}
+
+section:nth-of-type(even) {
+  background-color: #c0c0c0; /* Slightly darker gray background for even sections */
+}
+
+h2 {
+  text-align: center; /* Center-align section headers */
+  margin: 0 0 20px 0; /* Space below heading */
+  font-weight: 700; /* Bolder headings */
+  font-size: 2em; /* Larger font size for headings */
+  color: #333; /* Ensure header color matches text */
+  border: none; /* Remove the underline */
+}
+
+/* Paragraph and List Styling */
+p {
+  text-align: justify; /* Justify text in paragraphs */
+  margin: 0 auto;
+  max-width: 800px; /* Limit width for better readability */
+  line-height: 1.8; /* Increased line height for readability */
+  margin-bottom: 20px; /* Space between paragraphs */
+}
+
+ul {
+  padding-left: 0;
+  text-align: left; /* Align list items to the left */
+  margin: 0 auto;
+  max-width: 800px; /* Limit width for better readability */
+}
+
+ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.project-item {
+  margin-bottom: 40px; /* Increased spacing between projects */
+  text-align: center; /* Center-align project description */
+}
+
+.project-item h3 {
+  font-weight: 700; /* Bolder project titles */
+  font-size: 1.5em; /* Larger font size for project titles */
+  margin-bottom: 15px; /* Space below project titles */
+}
+
+/* Skills Section Styling */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between skill items */
+}
+
+.skill-item {
+  background-color: #f8f8f8; /* Light background for skill items */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px;
+  width: 300px; /* Fixed width for skill items */
+  text-align: center; /* Center-align text within skill items */
+}
+
+.skill-item h3 {
+  font-weight: 700; /* Bolder skill section titles */
+  font-size: 1.2em; /* Slightly larger font size for skill titles */
+  margin-bottom: 10px; /* Space below skill section titles */
+}
+
+.skill-item ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item ul li {
+  font-size: 1em; /* Adjust font size for list items */
+  margin-bottom: 5px; /* Space between list items */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222; /* Dark background for footer */
+  color: #fff;
+  text-align: center; /* Center-align text in the footer */
+  padding: 20px 0; /* Adjust padding for spacing */
+  position: relative;
+  margin-top: 10px; /* Ensure margin-top is as requested */
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
   }
-  
+
   nav ul li {
-    margin: 0 15px;
+    margin-bottom: 10px; /* Space between nav items on mobile */
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  nav ul li a:hover,
-  nav ul li a.active {
-    background-color: #555;
-    color: #fff;
-    border-radius: 5px;
-  }
-  
-  /* Section Styling */
-  section {
-    padding: 60px 20px;
-    margin-top: 50px; /* Space for fixed header */
-  }
-  
-  h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-  }
-  
-  /* Footer Styling */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
+}
