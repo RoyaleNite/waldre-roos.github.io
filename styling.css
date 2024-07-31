@@ -1,31 +1,51 @@
-/* styling.css */
-
-/* General Styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Use the imported font */
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #000;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header Styling */
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+}
+
+.parallax__layer--base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('test.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transform: translateZ(-1px) scale(1.5);
+  z-index: -1;
+}
+
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #222; /* Darker background for better contrast */
+  background-color: #222;
   color: #fff;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 20px; /* Adjusted padding for a thicker navbar */
-  background-color: #222; /* Consistent with the header */
+  padding: 15px 20px;
+  background-color: #222;
 }
 
 nav ul {
@@ -33,127 +53,135 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center; /* Ensure items are centered vertically */
+  align-items: center;
 }
 
 nav ul li {
-  position: relative; /* For positioning the separator */
-  margin: 0; /* Remove default margin */
+  position: relative;
+  margin: 0;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #fff; /* Default text color */
-  font-weight: 700; /* Bolder font weight for better readability */
-  padding: 10px 20px; /* Increased padding for larger clickable area */
-  transition: color 0.3s; /* Smooth transition for text color */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1em; /* Adjust font size for better balance */
-  display: inline-block; /* Ensure the links are displayed inline */
-  white-space: nowrap; /* Prevent text from wrapping */
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 20px;
+  transition: color 0.3s;
+  border-radius: 5px;
+  font-size: 1em;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #ddd; /* Highlight text color on hover */
+  color: #ddd;
 }
 
-/* Section Styling */
-section {
-  padding: 80px 20px; /* Increased padding to accommodate the thicker navbar */
-  margin: 0; /* Ensure no extra margin is applied */
+.section {
+  padding: 70px 20px 50px;
+  color: #000;
+  position: relative;
 }
 
-section:nth-of-type(odd) {
-  background-color: #dcdcdc; /* Light gray background for odd sections */
+.gray-section {
+  background-color: #dcdcdc;
 }
 
-section:nth-of-type(even) {
-  background-color: #c0c0c0; /* Slightly darker gray background for even sections */
+.section-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 h2 {
-  text-align: center; /* Center-align section headers */
-  margin: 0 0 20px 0; /* Space below heading */
-  font-weight: 700; /* Bolder headings */
-  font-size: 2em; /* Larger font size for headings */
-  color: #333; /* Ensure header color matches text */
-  border: none; /* Remove the underline */
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #000;
 }
 
-/* Paragraph and List Styling */
 p {
-  text-align: justify; /* Justify text in paragraphs */
   margin: 0 auto;
-  max-width: 800px; /* Limit width for better readability */
-  line-height: 1.8; /* Increased line height for readability */
-  margin-bottom: 20px; /* Space between paragraphs */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #000;
+}
+
+.resume-content {
+  text-align: justify;
 }
 
 ul {
   padding-left: 0;
-  text-align: left; /* Align list items to the left */
   margin: 0 auto;
-  max-width: 800px; /* Limit width for better readability */
+  text-align: justify;
 }
 
 ul li {
-  margin-bottom: 10px; /* Space between list items */
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.projects-content {
+  text-align: justify;
 }
 
 .project-item {
-  margin-bottom: 40px; /* Increased spacing between projects */
-  text-align: center; /* Center-align project description */
+  margin-bottom: 20px;
 }
 
-.project-item h3 {
-  font-weight: 700; /* Bolder project titles */
-  font-size: 1.5em; /* Larger font size for project titles */
-  margin-bottom: 15px; /* Space below project titles */
+.project-item a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* Skills Section Styling */
+.project-item a:hover {
+  text-decoration: underline;
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Space between skill items */
+  gap: 20px;
 }
 
 .skill-item {
-  background-color: #f8f8f8; /* Light background for skill items */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 300px; /* Fixed width for skill items */
-  text-align: center; /* Center-align text within skill items */
+  width: 300px;
+  text-align: center;
 }
 
 .skill-item h3 {
-  font-weight: 700; /* Bolder skill section titles */
-  font-size: 1.2em; /* Slightly larger font size for skill titles */
-  margin-bottom: 10px; /* Space below skill section titles */
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #000;
 }
 
 .skill-item ul {
-  list-style-type: none; /* Remove default list styling */
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
 .skill-item ul li {
-  font-size: 1em; /* Adjust font size for list items */
-  margin-bottom: 5px; /* Space between list items */
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #000;
 }
 
-/* Footer Styling */
 footer {
-  background-color: #222; /* Dark background for footer */
+  background-color: #222;
   color: #fff;
-  text-align: center; /* Center-align text in the footer */
-  padding: 20px 0; /* Adjust padding for spacing */
-  position: relative;
-  margin-top: 10px; /* Ensure margin-top is as requested */
+  text-align: center;
+  padding: 20px 0;
   width: 100%;
 }
 
@@ -164,14 +192,13 @@ footer {
   height: 100%;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start;
   }
 
   nav ul li {
-    margin-bottom: 10px; /* Space between nav items on mobile */
+    margin-bottom: 10px;
   }
 }
